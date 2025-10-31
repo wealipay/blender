@@ -4,6 +4,7 @@ import Link from "next/link";
 const NavBar = () => {
   return (
     <nav>
+      {/*Left*/}
       <Link href="/" className="flex items-center">
         <Image
           src="/logo.png"
@@ -14,6 +15,7 @@ const NavBar = () => {
         />
         <p className="text-md font-medium tracking-wider">Wealipay</p>
       </Link>
+      {/*Right*/}
     </nav>
   );
 };
