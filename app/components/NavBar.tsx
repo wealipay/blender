@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const NavBar = () => {
   return (
-    <nav>
+    <nav className="w-full flex items-center justify-between border-b border-gray-200">
       {/*Left*/}
       <Link href="/" className="flex items-center">
         <Image
@@ -16,6 +16,7 @@ const NavBar = () => {
         <p className="text-md font-medium tracking-wider">Wealipay</p>
       </Link>
       {/*Right*/}
+      <div className="">Right</div>
     </nav>
   );
 };
