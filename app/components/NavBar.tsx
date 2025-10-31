@@ -3,8 +3,8 @@ import Link from "next/link";
 
 const NavBar = () => {
   return (
-    <div>
-      <Link href="/">
+    <nav>
+      <Link href="/" className="flex items-center">
         <Image
           src="/logo.png"
           width={36}
@@ -12,8 +12,9 @@ const NavBar = () => {
           alt="logo"
           className="w-6 h-6 md:w-9 md:h-9"
         />
+        <p className="text-md font-medium tracking-wider">Wealipay</p>
       </Link>
-    </div>
+    </nav>
   );
 };
 export default NavBar;
