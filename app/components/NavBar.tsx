@@ -1,7 +1,7 @@
 import SearchBar from "./SearchBar";
 import Image from "next/image";
 import Link from "next/link";
-import {Home} from "lucide-react"
+import { Home, Bell, ShoppingCar } from "lucide-react";
 
 const NavBar = () => {
   return (
@@ -20,11 +20,13 @@ const NavBar = () => {
         </p>
       </Link>
       {/*Right*/}
-      <div className="">
+      <div className="flex items-center gap-6">
         <SearchBar />
         <Link href="/">
-          <Home />
+          <Home className="w-4 h-4 text-gray-600" />
         </Link>
+        <Bell className="w-4 h-4 text-gray-600" />
+        <ShoppingCar className="w-4 h-4 text-gray-600" />
       </div>
     </nav>
   );
