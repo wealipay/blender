@@ -1,6 +1,6 @@
 "use client";
-import {ProductType} from "@/types";
+import { ProductType } from "@/types";
 const ProductCard = ({ product }: { product: ProductType }) => {
-  return <div></div>;
+  return <div>ProductCard</div>;
 };
 export default ProductCard;
