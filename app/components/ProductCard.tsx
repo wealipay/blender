@@ -1,5 +1,5 @@
 "use client";
-import {ProductType} from "@/Types";
+import {ProductType} from "@/types";
 const ProductCard = ({ product }: { product: ProductType }) => {
   return <div></div>;
 };
