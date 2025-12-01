@@ -16,7 +16,7 @@ const Footer = () => {
       </div>
       <div className="flex flex-col gap-4 text-sm text-gray-400 items-center md:items-start">
         <p className="text-sm text-amber-50">相关链接</p>
-        <Link href="/">首页</Link>
+        <Link href="/">首h页</Link>
         <Link href="/">服务</Link>
         <Link href="/">关于</Link>
         <Link href="/">领红包</Link>
