@@ -1,6 +1,8 @@
 import ProductCard from "./ProductCard";
 import Categories from "./Categories";
 import { ProductsType } from "@/types";
+import { Suspense } from "react";
+
 const products: ProductsType = [
   {
     id: 1,
@@ -111,11 +113,14 @@ const products: ProductsType = [
     images: { blue: "/products/8b.png", green: "/products/8gr.png" }
   }
 ];
-
+const Loading = () => <div>全局加载中...</div>;
 const ProductList = () => {
   return (
     <div className="w-full">
-      <Categories />
+      <Suspense fallback={<Loading />}>
+        <Categories />
+      </Suspense>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-12">
         {products.map(product => (
           <ProductCard key={product.id} product={product} />
