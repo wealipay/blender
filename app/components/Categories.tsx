@@ -8,7 +8,7 @@ import {
   Hand,
   Venus
 } from "lucide-react";
-import {useSearchParams } from "next/navigation";
+import type { SearchParams } from "next/navigation";
 
 const categories = [
   {
@@ -52,7 +52,7 @@ const categories = [
     slug: "gloves"
   }
 ];
-const Categories = ({searchParams}) => {
+const Categories = ({ searchParams }: { searchParams?: SearchParams }) => {
   const selectedCategory = searchParams?.category;
 
   return (
