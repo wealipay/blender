@@ -8,7 +8,8 @@ import {
   Hand,
   Venus
 } from "lucide-react";
-import type { SearchParams } from "next/navigation";
+import { Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 
 const categories = [
   {
@@ -52,10 +53,13 @@ const categories = [
     slug: "gloves"
   }
 ];
-const Categories = ({ searchParams }: { searchParams?: SearchParams }) => {
-  const selectedCategory = searchParams?.category;
+const Loading = () => <div>全局加载中...</div>;
+const Categories = () => {
+  const searchParams = useSearchParams();
+  const selectedCategory = searchParams.get("category");
 
   return (
+    <Suspense fallback={<Loading />}>
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-2 bg-gray-100 rounded-lg p-2 mb-4 text-sm">
       {categories.map(category => (
         <div
@@ -69,6 +73,7 @@ const Categories = ({ searchParams }: { searchParams?: SearchParams }) => {
         </div>
       ))}
     </div>
+    </Suspense>
   );
 };
 export default Categories;
