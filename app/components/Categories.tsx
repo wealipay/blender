@@ -8,7 +8,7 @@ import {
   Hand,
   Venus
 } from "lucide-react";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
 const categories = [
   {
@@ -54,7 +54,11 @@ const categories = [
 ];
 const Categories = () => {
   const searchParams = useSearchParams();
-  const selectedCategory = searchParams.get("category");
+  const selectedCategory = searchParams.get("category") || "gloves";
+  const router = useRouter();
+  const handleClick=(value:string | null)=>{
+    router.push(`/?category=${value}`)
+  }
 
   return (
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-2 bg-gray-100 rounded-lg p-2 mb-4 text-sm">
@@ -64,6 +68,7 @@ const Categories = () => {
             category.slug === selectedCategory ? "bg-white" : "text-gray-500"
           }`}
           key={category.name}
+          onClick={()=>handleClick(category.slug)}
         >
           {category.icon}
           {category.name}
